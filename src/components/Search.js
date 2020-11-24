@@ -8,7 +8,7 @@ class Search extends Component {
   state = {
     employees: [],
     search: "",
-    sort: "ascend"
+    sort: false
   };
 
   componentDidMount() {
@@ -26,13 +26,25 @@ class Search extends Component {
     const value = event.target.value;
     this.setState({ [search]: value });
   };
+
   employeeArray = () => {
+    if (this.state.sort === false){
     const newArr = [...this.state.employees].sort((a,b) => a.name.last > b.name.last ? 1 : -1)
     this.setState({
       ...this.state,
       employees: newArr,
+      sort: true
     });
+  } else {
+    const newArr = [...this.state.employees].sort((a,b) => a.name.last > b.name.last ? -1 : 1)
+    this.setState({
+      ...this.state,
+      employees: newArr,
+      sort: false
+    });
+  }
   };
+
 
   render() {
     // console.log(this.state.employees);
@@ -51,7 +63,6 @@ class Search extends Component {
             employees={this.state.employees}
             search={this.state.search}
             employeeArray={this.employeeArray}
-            sort = {this.state.sort}
           />
         </div>
       </div>
