@@ -26,3 +26,7 @@ Fork this repository, run "npm install" and then run "npm start" or "npm run sta
 
 ReactJS
 
+## Comment to the grader regarding low commit history:
+
+Unfortunately as I was working to deploy to GitHub Pages, my original repository had deleted all of my work. I was lucky enough to have saved it in a different folder (something I have learned is very useful and will save me in times like these!) and had to create a new react app and paste my work into there, and push all of that into a brand new repository. My commit history is much lower than it would have been had I been able to use my original repo. 
+
